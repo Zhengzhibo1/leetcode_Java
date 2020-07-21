@@ -32,9 +32,9 @@ public class Solution {
 	// 2 先转置矩阵，再翻转每一行
 	// 时间复杂度O(n^2)
 	// 空间复杂度O(1)
-	// 1 2 3 1 4 7 7 4 1
-	// 4 5 6 2 5 8 8 5 2
-	// 7 8 9 3 6 9 9 6 3
+	// 1 2 3   1 4 7   7 4 1
+	// 4 5 6   2 5 8   8 5 2
+	// 7 8 9   3 6 9   9 6 3
 	public void rotate2(int[][] matrix) {
 		int length = matrix.length;
 
