@@ -3,7 +3,7 @@ public class Solution {
 // ====================算法实现====================
 	// 1 26进制
 	// 时间复杂度O(n)
-	// 空间复杂度O(n)
+	// 空间复杂度O(1)
 	public int titleToNumber(String s) {
 
 		if (s == null || s.length() == 0) {
