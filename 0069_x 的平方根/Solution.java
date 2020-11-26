@@ -2,6 +2,8 @@ public class Solution {
 
 // ===================算法实现===================
 	// 方法 二分查找
+	// 时间复杂度O(log x)
+	// 空间复杂度O(1)
 	public int mySqrt(int x) {
 
 		int start = 0, end = x, mid = 0, result = 0;
