@@ -9,7 +9,8 @@ public class Solution {
 		int start = 0, end = x, mid = 0, result = 0;
 		while (start <= end) {
 			mid = start + ((end - start) >> 1);
-			if (mid * mid <= x) {
+			// 注意计算前，将数字转换成长整型
+			if ((long)mid * mid <= x) {
 				result = mid;
 				start = mid + 1;
 			} else {
