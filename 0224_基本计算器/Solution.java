@@ -42,7 +42,7 @@ public class Solution {
 			}
 		}
 
-		return result;
+		return result + sign * operand;
 	}
 
 // ===================测试代码======================
