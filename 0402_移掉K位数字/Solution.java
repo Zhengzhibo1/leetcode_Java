@@ -4,6 +4,9 @@ import java.util.LinkedList;
 public class Solution {
 
 // ===================算法实现=====================
+	// 方法 贪心 + 栈
+	// 时间复杂度O(n)
+	// 空间复杂度O(n)
 	public String removeKdigits(String num, int k) {
 
 		Deque<Character> deque = new LinkedList<Character>();
