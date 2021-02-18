@@ -4,6 +4,9 @@ import java.util.List;
 public class Solution {
 
 // ===================算法实现===================
+	// 方法 一次遍历
+	// 时间复杂度O(n)
+	// 空间复杂度O(1)
 	public List<Integer> selfDividingNumbers(int left, int right) {
 
 		List<Integer> resultList = new ArrayList<Integer>();
