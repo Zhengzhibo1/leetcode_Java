@@ -1,46 +1,51 @@
 public class Solution {
 
 // ===================算法实现====================
-	// 方法 分组异或
+	// 方法1 遍历统计
 	// 时间复杂度O(n)
 	// 空间复杂度O(1)
-	public int[] singleNumbers(int[] nums) {
+	public int singleNumber(int[] nums) {
 
-		// 找到两个出现一次数字的不同位
-		int n = 0;
-		for (int i : nums) {
-			n ^= i;
-		}
-		int m = 1;
-		while ((n & m) == 0) {
-			m <<= 1;
-		}
-
-		int x = 0, y = 0;
-		for (int i : nums) {
-			if ((i & m) != 0) {
-				x ^= i;
-			} else {
-				y ^= i;
+		int[] counts = new int[32];
+		for (int num : nums) {
+			for (int i = 0; i < 32; ++i) {
+				counts[i] += num & 1;
+				num >>>= 1;
 			}
 		}
 
-		return new int[] { x, y };
+		int res = 0;
+		for (int i = 0; i < 32; ++i) {
+			res <<= 1;
+			res |= counts[31 - i] % 3;
+		}
+
+		return res;
+	}
+
+	// 方法2 有限状态机 00 01 10
+	public int singleNumber2(int[] nums) {
+
+		int ones = 0, twos = 0;
+		for (int num : nums) {
+
+			ones = ones ^ num & ~twos;
+			twos = twos ^ num & ~ones;
+		}
+
+		return ones;
 	}
 
 // ===================测试代码====================
 	public void test() {
-		int[] nums = { 4, 1, 4, 6 };
-		int[] result = singleNumbers(nums);
-		for (int i : result) {
-			System.out.print(i + "\t");
-		}
+		int[] nums = { 3, 4, 3, 3 };
+		int result = singleNumber2(nums);
+		System.out.println(result);
 	}
 
 	public static void main(String[] args) {
 		Solution s = new Solution();
 		s.test();
-
 	}
 
 }
