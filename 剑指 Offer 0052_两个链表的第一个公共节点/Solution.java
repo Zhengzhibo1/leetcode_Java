@@ -11,6 +11,8 @@ public class Solution {
 
 // ===================算法实现===================
 	// 方法1 双指针 多次遍历
+	// 时间复杂度O(m + n)，m和n分别为两链表的长度
+	// 空间复杂度O(1)
 	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
 		// 边界条件判断
@@ -56,6 +58,8 @@ public class Solution {
 	}
 
 	// 方法2 一次遍历
+	// 时间复杂度O(m + n)，m和n分别为两链表的长度
+	// 空间复杂度O(1)
 	public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
 
 		// 边界条件判断
