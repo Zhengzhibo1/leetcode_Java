@@ -1,0 +1,39 @@
+public class Solution {
+
+// ===================算法实现=====================
+	// 方法 一次遍历，若是大数问题，可采用递归，全排列
+	// 时间复杂度O(n)
+	// 空间复杂度O(1)
+	public int[] printNumbers(int n) {
+
+		// 边界条件判断
+		if (n <= 0) {
+			return new int[0];
+		}
+
+		int max = (int) (Math.pow(10, n) - 1);
+
+		int[] nums = new int[max];
+		for (int i = 0; i < nums.length; ++i) {
+			nums[i] = i + 1;
+		}
+
+		return nums;
+	}
+
+// ===================测试代码=====================
+	public void test() {
+		int n = 1;
+		int[] nums = printNumbers(n);
+		for (int num : nums) {
+			System.out.print(num + "\t");
+		}
+	}
+
+	public static void main(String[] args) {
+		Solution s = new Solution();
+		s.test();
+
+	}
+
+}
